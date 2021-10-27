@@ -41,4 +41,4 @@ if(fs.existsSync("./key.pem") && fs.existsSync("./cert.pem")){
 } else {
   server = app.listen(HTTPS_PORT)
 }
-module.exports = httpsServer;
+module.exports = server;

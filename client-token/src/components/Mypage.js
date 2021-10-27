@@ -25,6 +25,23 @@ class Mypage extends Component {
     ** 주의사항 **
     App 컴포넌트에서 내려받은 accessToken props를 authorization header에 담아 요청을 보내야 합니다. 
     */
+    axios.get("https://localhost:4000/accesstokenrequest",{headers:{
+      Authorization : `Bearer ${this.props.accessToken}`
+    }}).then(res=>{
+      
+      // this.state.userId = res.data.data.userInfo.userId
+      // this.state.email = res.data.data.userInfo.email
+      // this.state.createdAt = res.data.data.userInfo.userId.createdAt
+
+      this.setState({
+        userId: res.data.data.userInfo.userId,
+        email: res.data.data.userInfo.email,
+        createdAt: res.data.data.userInfo.createdAt,
+      });
+
+    })
+
+
    
   }
 
@@ -35,7 +52,16 @@ class Mypage extends Component {
     1. Mypage 컴포넌트의 state(userId, email, createdAt)를 변경
     2. 상위 컴포넌트 App의 state에 accessToken을 받은 새 토큰으로 교환
     */
-   
+    axios.get("https://localhost:4000/refreshtokenrequest",{withCredentials:true})
+    .then(res=>{
+    
+      this.setState({
+        userId: res.data.data.userInfo.userId,
+        email: res.data.data.userInfo.email,
+        createdAt: res.data.data.userInfo.createdAt,
+      });
+      this.props.issueAccessToken(res.data.data.accessToken)
+    })
   }
 
   render() {

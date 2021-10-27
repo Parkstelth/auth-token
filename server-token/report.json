@@ -1,0 +1,32 @@
+{
+  "stats": {
+    "suites": 0,
+    "tests": 0,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-10-27T07:32:04.830Z",
+    "end": "2021-10-27T07:32:04.831Z",
+    "duration": 1
+  },
+  "tests": [],
+  "pending": [],
+  "failures": [
+    {
+      "title": "Uncaught error outside test suite",
+      "fullTitle": "Uncaught error outside test suite",
+      "currentRetry": 0,
+      "err": {
+        "stack": "Error: listen EADDRINUSE: address already in use :::4000\n    at Server.setupListenHandle [as _listen2] (net.js:1320:16)\n    at listenInCluster (net.js:1368:12)\n    at Server.listen (net.js:1454:7)\n    at Object.<anonymous> (index.js:39:10)\n    at Module._compile (internal/modules/cjs/loader.js:1072:14)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1101:10)\n    at Module.load (internal/modules/cjs/loader.js:937:32)\n    at Function.Module._load (internal/modules/cjs/loader.js:778:12)\n    at Module.require (internal/modules/cjs/loader.js:961:19)\n    at require (internal/modules/cjs/helpers.js:92:18)\n    at Object.<anonymous> (__tests__/server.test.js:28:13)\n    at Module._compile (internal/modules/cjs/loader.js:1072:14)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1101:10)\n    at Module.load (internal/modules/cjs/loader.js:937:32)\n    at Function.Module._load (internal/modules/cjs/loader.js:778:12)\n    at Module.require (internal/modules/cjs/loader.js:961:19)\n    at require (internal/modules/cjs/helpers.js:92:18)\n    at /home/juneyoung/Desktop/im-sprint-auth-token/server-token/node_modules/yargs/build/index.cjs:443:71",
+        "message": "listen EADDRINUSE: address already in use :::4000",
+        "code": "EADDRINUSE",
+        "errno": -98,
+        "syscall": "listen",
+        "address": "::",
+        "port": 4000,
+        "uncaught": true
+      }
+    }
+  ],
+  "passes": []
+}
